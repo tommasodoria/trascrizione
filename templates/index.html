@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Trascrittore e Traduttore Audio</title>
+</head>
+<body>
+    <h2>Carica un file audio</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="audio_file" accept=".mp3,.wav,.m4a,.flac" required><br><br>
+        Lingua origine:
+        <select name="lang_source">
+            <option value="auto">Auto</option>
+            <option value="it">Italiano</option>
+            <option value="en">Inglese</option>
+            <option value="fr">Francese</option>
+            <option value="es">Spagnolo</option>
+            <option value="de">Tedesco</option>
+        </select><br><br>
+        Lingua destinazione:
+        <select name="lang_target">
+            <option value="it">Italiano</option>
+            <option value="en">Inglese</option>
+            <option value="fr">Francese</option>
+            <option value="es">Spagnolo</option>
+            <option value="de">Tedesco</option>
+        </select><br><br>
+        <input type="submit" value="Trascrivi e Traduci">
+    </form>
+
+    {% if trascrizione %}
+        <h3>Testo originale:</h3>
+        <pre>{{ trascrizione }}</pre>
+        <h3>Traduzione:</h3>
+        <pre>{{ traduzione }}</pre>
+    {% endif %}
+</body>
+</html>
