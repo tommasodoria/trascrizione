@@ -2,3 +2,4 @@ Flask
 whisper
 torch
 deep-translator
+gunicorn
